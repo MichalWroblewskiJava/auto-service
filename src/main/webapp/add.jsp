@@ -18,17 +18,7 @@
     /*TODO: stworzyć warunek sprawdzający czy któreś pole nie jest puste.
        Jeśli użytkownik nie wypełnił któregoś pola, to w ogóle nie wykonujemy tych
        czynnośi poniżej, tylko od razu przechodzimy do "response.sendRedirect..." */
-    Custamer custamer = Custamer.builder()
-            .name(request.getParameter("name"))
-            .surname(request.getParameter("surname"))
-            .cars_qty(Integer.parseInt(request.getParameter("cars_qty")))
-            /* jeśli pełnoletni jest zaznaczone, to przyjmuje wartość "on" - text/String/on */
-            .tips(request.getParameter("tips") != null)
-            .rate(Integer.parseInt(request.getParameter("rate")))
-            .build();
-    EntityDao dao = new EntityDao();
-    dao.saveOrUpdate(custamer);
-    response.sendRedirect("custamer_list.jsp");
+
 %>
 
 

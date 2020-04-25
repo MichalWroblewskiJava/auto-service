@@ -1,12 +1,12 @@
 <ul class="nav_list">
     <li class="nav_item">
-        <a class="nav_link" href="index.jsp">Home page</a>
+        <a class="nav_link" href="/index.jsp">Home page</a>
     </li>
     <li class="nav_item">
-        <a class="nav_link" href="custamer_form.jsp">Custamer form</a>
+        <a class="nav_link" href="/custamer/add">Custamer form</a>
     </li>
     <li class="nav_item">
-        <a class="nav_link" href="custamer_list.jsp">Custamer list</a>
+        <a class="nav_link" href="/custamer/list">Custamer list</a>
     </li>
 </ul>
 <%--<table>--%>

@@ -16,7 +16,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Builder
 
-public class Custamer implements IBaseEntity{
+public class Custamer implements IBaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

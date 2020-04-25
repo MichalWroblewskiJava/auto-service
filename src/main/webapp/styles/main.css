@@ -67,8 +67,8 @@ table {
 .td_item {
     text-align: center;
     color: black;
-    font-size: large;
     padding: 10px;
     border: 1px solid black;
     font-size: small;
+    width: 100px;
 }

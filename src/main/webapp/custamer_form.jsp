@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
 
@@ -22,7 +22,7 @@
     </div>
     <nav class="nav">
 
-        <jsp:include page="menu.jsp"/>
+        <jsp:include page="/menu.jsp"/>
 
     </nav>
 
@@ -32,7 +32,7 @@
 
 <main>
 
-<form action="add.jsp" method="get">
+<form action="/custamer/add" method="post">
     Name: <input type="text" name="name"/>
     <br/>
     Surname: <input type="text" name="surname"/>
