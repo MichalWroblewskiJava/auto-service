@@ -1,4 +1,4 @@
-package servlets;
+package pl.sda.javagdy2.servlets;
 
 
 import pl.sda.javagdy2.database.EntityDao;
