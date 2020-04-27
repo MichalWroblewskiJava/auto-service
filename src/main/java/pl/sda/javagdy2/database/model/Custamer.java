@@ -4,12 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pl.sda.javagdy2.database.model.IBaseEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -27,4 +25,6 @@ public class Custamer implements IBaseEntity {
     private Boolean tips;
     private Integer rate;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "custamer")
+    private List<Order> orderList;
 }
