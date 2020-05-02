@@ -41,6 +41,7 @@
         <td class="td_item">Tips</td>
         <td class="td_item">Rate</td>
         <td class="td_item">/customer/delete</td>
+        <td class="td_item">/customer/detail</td>
         </thead>
         <tbody>
         <c:forEach var="customer" items="${requestScope.customers}">
@@ -53,6 +54,9 @@
                 <td class="td_item"><c:out value="${customer.rate}"/></td>
                 <td class="td_item">
                     <a href="/customer/delete?identToDelete=<c:out value="${customer.id}"/>">delete</a>
+                </td>
+                <td class="td_item">
+                    <a href="/customer/detail?identToEdit=<c:out value="${customer.id}"/>">Edit</a>
                 </td>
             </tr>
         </c:forEach>
