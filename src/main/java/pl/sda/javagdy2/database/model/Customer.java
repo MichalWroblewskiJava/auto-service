@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 
-public class Custamer implements IBaseEntity {
+public class Customer implements IBaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -25,6 +25,6 @@ public class Custamer implements IBaseEntity {
     private Boolean tips;
     private Integer rate;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "custamer")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
     private List<Order> orderList;
 }

@@ -29,8 +29,8 @@ public class Order implements IBaseEntity {
 
     private Boolean paid;
 
-    @ManyToOne()
-    private Custamer custamer;
+   @ManyToOne()
+    private Customer customer;
 
     public Order(Fault fault, Boolean paid) {
         this.fault = fault;

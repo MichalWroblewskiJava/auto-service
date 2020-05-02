@@ -1,5 +1,5 @@
 <%@ page import="pl.sda.javagdy2.database.EntityDao" %>
-<%@ page import="pl.sda.javagdy2.database.model.Custamer" %>
+<%@ page import="pl.sda.javagdy2.database.model.Customer" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: mWroblewski
@@ -12,7 +12,7 @@
 <%@ page isELIgnored="false" %>
 <html>
 <head>
-    <title>custamer list</title>
+    <title>customer list</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
 
 <header id="header">
     <div class="link_description">
-        <h1>Custamer list</h1>
+        <h1>Customer list</h1>
     </div>
     <nav class="nav">
 
@@ -40,19 +40,19 @@
         <td class="td_item">Cars Quntity</td>
         <td class="td_item">Tips</td>
         <td class="td_item">Rate</td>
-        <td class="td_item">/custamer/delete</td>
+        <td class="td_item">/customer/delete</td>
         </thead>
         <tbody>
-        <c:forEach var="custamer" items="${requestScope.custamers}">
+        <c:forEach var="customer" items="${requestScope.customers}">
             <tr>
-                <td class="td_item"><c:out value="${custamer.id}"/></td>
-                <td class="td_item"><c:out value="${custamer.name}"/></td>
-                <td class="td_item"><c:out value="${custamer.surname}"/></td>
-                <td class="td_item"><c:out value="${custamer.cars_qty}"/></td>
-                <td class="td_item"><c:out value="${custamer.tips}"/></td>
-                <td class="td_item"><c:out value="${custamer.rate}"/></td>
+                <td class="td_item"><c:out value="${customer.id}"/></td>
+                <td class="td_item"><c:out value="${customer.name}"/></td>
+                <td class="td_item"><c:out value="${customer.surname}"/></td>
+                <td class="td_item"><c:out value="${customer.cars_qty}"/></td>
+                <td class="td_item"><c:out value="${customer.tips}"/></td>
+                <td class="td_item"><c:out value="${customer.rate}"/></td>
                 <td class="td_item">
-                    <a href="/custamer/delete?identToDelete=<c:out value="${custamer.id}"/>">delete</a>
+                    <a href="/customer/delete?identToDelete=<c:out value="${customer.id}"/>">delete</a>
                 </td>
             </tr>
         </c:forEach>

@@ -2,7 +2,7 @@ package pl.sda.javagdy2.servlets;
 
 
 import pl.sda.javagdy2.database.EntityDao;
-import pl.sda.javagdy2.database.model.Custamer;
+import pl.sda.javagdy2.database.model.Customer;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/custamer/add")
-public class CustamerAddServlet extends HttpServlet {
+@WebServlet("/customer/add")
+public class CustomerAddServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/custamer_form.jsp").forward(req,resp);
+        req.getRequestDispatcher("/customer_form.jsp").forward(req,resp);
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Custamer custamer = Custamer.builder()
+        Customer customer = Customer.builder()
                 .name(req.getParameter("name"))
                 .surname(req.getParameter("surname"))
                 .cars_qty(Integer.parseInt(req.getParameter("cars_qty")))
@@ -29,8 +29,8 @@ public class CustamerAddServlet extends HttpServlet {
                 .rate(Integer.parseInt(req.getParameter("rate")))
                 .build();
         EntityDao dao = new EntityDao();
-        dao.saveOrUpdate(custamer);
-        resp.sendRedirect("/custamer/list");
+        dao.saveOrUpdate(customer);
+        resp.sendRedirect("/customer/list");
     }
 
 }

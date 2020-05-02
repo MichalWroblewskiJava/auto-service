@@ -2,7 +2,7 @@ package pl.sda.javagdy2.servlets;
 
 
 import pl.sda.javagdy2.database.EntityDao;
-import pl.sda.javagdy2.database.model.Custamer;
+import pl.sda.javagdy2.database.model.Customer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,25 +14,25 @@ import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
 
-@WebServlet("/custamer/list")
-public class CustamerListServlet extends HttpServlet {
+@WebServlet("/customer/list")
+public class CustomerListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         EntityDao dao = new EntityDao();
-        List<Custamer> lista = dao.list(Custamer.class);
+        List<Customer> lista = dao.list(Customer.class);
 
 
-        lista.sort(new Comparator<Custamer>() {
+        lista.sort(new Comparator<Customer>() {
             @Override
-            public int compare(Custamer o1, Custamer o2) {
+            public int compare(Customer o1, Customer o2) {
 //                return o1.getId().compareTo(o2.getId());
                 return Long.compare(o1.getId(), o2.getId());
             }
         });
-        req.setAttribute("custamers",lista);
+        req.setAttribute("customers",lista);
 
-        RequestDispatcher dispatcher= req.getRequestDispatcher("/custamer_list.jsp");
+        RequestDispatcher dispatcher= req.getRequestDispatcher("/customer_list.jsp");
         dispatcher.forward(req,resp);
     }
 }
