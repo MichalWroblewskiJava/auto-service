@@ -25,7 +25,7 @@
     <br/>
     Order:
     <select name="fault">
-        <c:forEach var="fau" items="${requestScope.orders}">
+        <c:forEach var="fau" items="${requestScope.faults}">
             <option value="${fau}">${fau.description}</option>
         </c:forEach>
     </select>

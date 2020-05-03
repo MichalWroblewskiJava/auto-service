@@ -22,7 +22,7 @@ public class OrderAddServlet extends HttpServlet {
            return;
        }
        req.setAttribute("customer_identifier",customerId);
-       req.setAttribute("orders", Fault.values());
+       req.setAttribute("faults", Fault.values());
        req.getRequestDispatcher("/order_form.jsp").forward(req,resp);
     }
 
@@ -31,6 +31,7 @@ public class OrderAddServlet extends HttpServlet {
         String faultString = req.getParameter("fault");
         String plateString = req.getParameter("car_plate");
         String paidString = req.getParameter("paid");
+
         if(plateString==null||faultString==null||plateString.isEmpty()|| faultString.isEmpty()){
             resp.sendRedirect("/customer/list");// sparwdzanie dlaczego przenosi do listy klientów
             return;
@@ -40,10 +41,12 @@ public class OrderAddServlet extends HttpServlet {
         boolean paid = Boolean.parseBoolean(paidString);
         Order order = new Order(faultOrder,plateString,paid);
         String customerId = req.getParameter("customerOrderID");
+
         if(customerId==null || customerId.isEmpty()){
             resp.sendRedirect("/customer/list");
             return;
         }
+
         Long customerIdLong= Long.parseLong(customerId);
         EntityDao dao = new EntityDao();
         Customer customer = dao.getById(Customer.class,customerIdLong);
