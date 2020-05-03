@@ -32,8 +32,9 @@ public class Order implements IBaseEntity {
     @ManyToOne()
     private Customer customer;
 
-    public Order(Fault fault, Boolean paid) {
+    public Order(Fault fault,String car_plate, Boolean paid) {
         this.fault = fault;
+        this.car_plate = car_plate;
         this.paid = paid;
     }
 }

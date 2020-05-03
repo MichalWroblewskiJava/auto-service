@@ -47,7 +47,7 @@
 <br/>
 
 <%--Link do strony dodawania ocen - możemy przesłać dane o studencie.--%>
-<a href="${pageContext.request.contextPath}/order/add?customerId=<c:out value="${requestScope.customerDetails.id}"/>">Add order </a>
+<a href="${pageContext.request.contextPath}/order/add?customerId=<c:out value="${requestScope.customerDetails.id}"/>">Add order to this customer </a>
 
 <br/>
 
@@ -60,12 +60,10 @@
         <td class="td_item">Fault</td>
         <td class="td_item">Car Plate</td>
         <td class="td_item">Paid</td>
-
-
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="order" items="${requestScope.customerDetails.orderList}">
+    <c:forEach var="order" items="${requestScope.customerDetails.customerOrderList}">
         <tr>
             <td class="td_item"><c:out value="${order.id}"/></td>
             <td class="td_item"><c:out value="${order.dateTime}"/></td>
@@ -74,10 +72,10 @@
             <td class="td_item"><c:out value="${order.paid}"/></td>
 
             <td class="td_item">
-                <a href="/order/remove?orderId=<c:out value="${order.id}"/>">Remove</a>
+                <a href="${pageContext.request.contextPath}/order/remove?orderId=<c:out value="${order.id}"/>">Remove</a>
             </td>
             <td class="td_item">
-                <a href="/order/edit?orderId=<c:out value="${order.id}"/>">Edit</a>
+                <a href="${pageContext.request.contextPath}/order/edit?orderId=<c:out value="${order.id}"/>">Edit</a>
             </td>
 
         </tr>
