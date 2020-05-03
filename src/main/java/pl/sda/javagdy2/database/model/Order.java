@@ -27,12 +27,12 @@ public class Order implements IBaseEntity {
 
     private String car_plate;
 
-    private Boolean paid;
+    private boolean paid;
 
     @ManyToOne()
     private Customer customer;
 
-    public Order(Fault fault,String car_plate, Boolean paid) {
+    public Order(Fault fault,String car_plate, boolean paid) {
         this.fault = fault;
         this.car_plate = car_plate;
         this.paid = paid;

@@ -63,13 +63,13 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="order" items="${requestScope.customerDetails.customerOrderList}">
+    <c:forEach var="elementFromListOfOrder" items="${requestScope.customerDetails.customerOrderList}">
         <tr>
-            <td class="td_item"><c:out value="${order.id}"/></td>
-            <td class="td_item"><c:out value="${order.dateTime}"/></td>
-            <td class="td_item"><c:out value="${order.fault}"/></td>
-            <td class="td_item"><c:out value="${order.car_plate}"/></td>
-            <td class="td_item"><c:out value="${order.paid}"/></td>
+            <td class="td_item"><c:out value="${elementFromListOfOrder.id}"/></td>
+            <td class="td_item"><c:out value="${elementFromListOfOrder.dateTime}"/></td>
+            <td class="td_item"><c:out value="${elementFromListOfOrder.fault}"/></td>
+            <td class="td_item"><c:out value="${elementFromListOfOrder.car_plate}"/></td>
+            <td class="td_item"><c:out value="${elementFromListOfOrder.paid}"/></td>
 
             <td class="td_item">
                 <a href="${pageContext.request.contextPath}/order/remove?orderId=<c:out value="${order.id}"/>">Remove</a>

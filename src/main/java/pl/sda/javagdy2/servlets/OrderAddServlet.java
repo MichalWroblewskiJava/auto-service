@@ -28,14 +28,14 @@ public class OrderAddServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String orderString = req.getParameter("order");
         String faultString = req.getParameter("fault");
         String plateString = req.getParameter("car_plate");
         String paidString = req.getParameter("paid");
-        if(orderString==null||faultString==null||orderString.isEmpty()|| faultString.isEmpty()){
-            resp.sendRedirect("nie pobiera order");// sparwdzanie dlaczego przenosi do listy klientów
+        if(plateString==null||faultString==null||plateString.isEmpty()|| faultString.isEmpty()){
+            resp.sendRedirect("/customer/list");// sparwdzanie dlaczego przenosi do listy klientów
             return;
         }
+
         Fault faultOrder = Fault.valueOf(faultString);
         boolean paid = Boolean.parseBoolean(paidString);
         Order order = new Order(faultOrder,plateString,paid);
