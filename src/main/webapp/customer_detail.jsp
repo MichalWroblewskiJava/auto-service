@@ -72,10 +72,10 @@
             <td class="td_item"><c:out value="${elementFromListOfOrder.paid}"/></td>
 
             <td class="td_item">
-                <a href="${pageContext.request.contextPath}/order/remove?orderId=<c:out value="${order.id}"/>">Remove</a>
+                <a href="${pageContext.request.contextPath}/order/remove?orderId=<c:out value="${elementFromListOfOrder.id}"/>">Remove</a>
             </td>
             <td class="td_item">
-                <a href="${pageContext.request.contextPath}/order/edit?orderId=<c:out value="${order.id}"/>">Edit</a>
+                <a href="${pageContext.request.contextPath}/order/edit?orderId=<c:out value="${elementFromListOfOrder.id}"/>">Edit</a>
             </td>
 
         </tr>
