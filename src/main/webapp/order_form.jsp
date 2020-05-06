@@ -13,26 +13,30 @@
     <title>Order form</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="${pageContext.request.contextPath}/https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/https://fonts.googleapis.com/css?family=Lato&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/main.css">
 </head>
 <body>
 <h1>Formularz zamówienia: <c:out value="${requestScope.customer_identifier}"/></h1>
 <jsp:include page="/menu.jsp"/>
 <br/>
-<form action="/order/add" method="post">
+<form action="${pageContext.request.contextPath}${(requestScope.orderToEdit==null ? "/order/add" :'/order/edit')}" method="post">
     <input type="hidden" name="customerOrderID" value="<c:out value="${requestScope.customer_identifier}"/>">
+    <input type="hidden" name="editedOrder" value="<c:out value="${requestScope.orderToEdit.id}"/>">
     <br/>
     Order:
     <select name="fault">
         <c:forEach var="fau" items="${requestScope.faults}">
-            <option value="${fau}">${fau.description}</option>
+            <option value="${fau}" ${fau == requestScope.orderToEdit.fault ? 'selected': ''} >${fau.description}</option>
         </c:forEach>
     </select>
     <br/>
-    Car plate: <input type="text" name="car_plate"/>
+    Car plate: <input type="text" name="car_plate" value="${requestScope.orderToEdit.car_plate}"/>
     <br/>
-    Paid: <input type="checkbox" name="paid"/>
+<%--    Paid: <input type="checkbox" name="paid"  value="${requestScope.orderToEdit.paid}"/>--%>
+    Paid: <input type="checkbox" name="paid" ${empty(requestScope.orderToEdit.paid)? "": "checked"} value="true"/>
+<%--    Paid: <input type="checkbox" name="paid" value="${requestScope.orderToEdit.paid ? "": "checked"}"/>--%>
     <br/>
     <input type="submit">
 </form>
