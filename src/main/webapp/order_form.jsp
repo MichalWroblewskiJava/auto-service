@@ -34,9 +34,7 @@
     <br/>
     Car plate: <input type="text" name="car_plate" value="${requestScope.orderToEdit.car_plate}"/>
     <br/>
-<%--    Paid: <input type="checkbox" name="paid"  value="${requestScope.orderToEdit.paid}"/>--%>
-    Paid: <input type="checkbox" name="paid" ${empty(requestScope.orderToEdit.paid)? "": "checked"} value="true"/>
-<%--    Paid: <input type="checkbox" name="paid" value="${requestScope.orderToEdit.paid ? "": "checked"}"/>--%>
+    Paid: <input type="checkbox" name="paid" ${(requestScope.orderToEdit.paid)? "checked": ""} value="true"/>
     <br/>
     <input type="submit">
 </form>
