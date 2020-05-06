@@ -56,30 +56,31 @@
     <thead>
     <tr>
         <td class="td_item">Id</td>
-        <td class="td_item">Date time</td>
         <td class="td_item">Fault</td>
         <td class="td_item">Car Plate</td>
         <td class="td_item">Paid</td>
+        <td class="td_item">Date time</td>
+        <td class="td_item">/order/remove</td>
+        <td class="td_item">/order/edit</td>
     </tr>
     </thead>
     <tbody>
-<%--    <c:forEach var="elementFromListOfOrder" items="${requestScope.customerDetails.customerOrderList}">--%>
-<%--        <tr>--%>
-<%--            <td class="td_item"><c:out value="${elementFromListOfOrder.id}"/></td>--%>
-<%--            <td class="td_item"><c:out value="${elementFromListOfOrder.dateTime}"/></td>--%>
-<%--            <td class="td_item"><c:out value="${elementFromListOfOrder.fault}"/></td>--%>
-<%--            <td class="td_item"><c:out value="${elementFromListOfOrder.car_plate}"/></td>--%>
-<%--            <td class="td_item"><c:out value="${elementFromListOfOrder.paid}"/></td>--%>
+    <c:forEach var="elementFromListOfOrder" items="${requestScope.customerDetails.customerOrderList}">
+        <tr>
+            <td class="td_item"><c:out value="${elementFromListOfOrder.id}"/></td>
+            <td class="td_item"><c:out value="${elementFromListOfOrder.fault.description}"/></td>
+            <td class="td_item"><c:out value="${elementFromListOfOrder.car_plate}"/></td>
+            <td class="td_item"><c:out value="${elementFromListOfOrder.paid}"/></td>
+            <td class="td_item"><c:out value="${elementFromListOfOrder.dateTime}"/></td>
+            <td class="td_item">
+                <a href="${pageContext.request.contextPath}/order/remove?orderId=<c:out value="${elementFromListOfOrder.id}"/>">Remove</a>
+            </td>
+            <td class="td_item">
+                <a href="${pageContext.request.contextPath}/order/edit?orderId=<c:out value="${elementFromListOfOrder.id}"/>">Edit</a>
+            </td>
 
-<%--            <td class="td_item">--%>
-<%--                <a href="${pageContext.request.contextPath}/order/remove?orderId=<c:out value="${elementFromListOfOrder.id}"/>">Remove</a>--%>
-<%--            </td>--%>
-<%--            <td class="td_item">--%>
-<%--                <a href="${pageContext.request.contextPath}/order/edit?orderId=<c:out value="${elementFromListOfOrder.id}"/>">Edit</a>--%>
-<%--            </td>--%>
-
-<%--        </tr>--%>
-<%--    </c:forEach>--%>
+        </tr>
+    </c:forEach>
     </tbody>
 </table>
 </body>

@@ -19,6 +19,6 @@
         </property> <!-- hibernate to data definition language - polityka generowania tabel -->
         <property name="show_sql">true</property>
         <mapping class="pl.sda.javagdy2.database.model.Customer"/>
-        <mapping class="pl.sda.javagdy2.database.model.Order"/>
+        <mapping class="pl.sda.javagdy2.database.model.CustomerOrder"/>
     </session-factory>
 </hibernate-configuration>

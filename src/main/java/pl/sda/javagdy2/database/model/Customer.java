@@ -1,15 +1,10 @@
 package pl.sda.javagdy2.database.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -27,6 +22,8 @@ public class Customer implements IBaseEntity {
     private Boolean tips;
     private Integer rate;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customer")
-    private List<Order> customerOrderList;
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "customer")
+    private Set<CustomerOrder> customerOrderList;
 }

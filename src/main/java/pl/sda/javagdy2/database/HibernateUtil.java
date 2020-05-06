@@ -1,5 +1,6 @@
 package pl.sda.javagdy2.database;
 
+import lombok.Builder;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 

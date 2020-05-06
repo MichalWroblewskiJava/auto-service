@@ -52,6 +52,7 @@
                 <td class="td_item"><c:out value="${customer.cars_qty}"/></td>
                 <td class="td_item"><c:out value="${customer.tips}"/></td>
                 <td class="td_item"><c:out value="${customer.rate}"/></td>
+
                 <td class="td_item">
                     <a href="/customer/delete?identToDelete=<c:out value="${customer.id}"/>">delete</a>
                 </td>

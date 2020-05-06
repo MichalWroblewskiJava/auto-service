@@ -1,6 +1,7 @@
 package pl.sda.javagdy2.database.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -12,15 +13,11 @@ import java.time.LocalDateTime;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-
-
-public class Order implements IBaseEntity {
+@Builder
+public class CustomerOrder implements IBaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @CreationTimestamp
-    private LocalDateTime dateTime;
 
     @Enumerated(EnumType.STRING)
     private Fault fault;
@@ -29,10 +26,13 @@ public class Order implements IBaseEntity {
 
     private boolean paid;
 
-    @ManyToOne()
+    @CreationTimestamp
+    private LocalDateTime dateTime;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private Customer customer;
 
-    public Order(Fault fault,String car_plate, boolean paid) {
+    public CustomerOrder(Fault fault, String car_plate, boolean paid) {
         this.fault = fault;
         this.car_plate = car_plate;
         this.paid = paid;
