@@ -28,7 +28,7 @@ public class CustomerEditServlet extends HttpServlet {
             req.setAttribute("rate", customer.getRate());
             req.getRequestDispatcher("/customer_form.jsp").forward(req, resp);
         } catch (NumberFormatException | NullPointerException ne) {
-            resp.sendRedirect("/customer/list");
+            resp.sendRedirect(getServletContext().getContextPath()+"/customer/list");
         }
     }
 
@@ -52,9 +52,9 @@ public class CustomerEditServlet extends HttpServlet {
             customer.setRate(rate);
             dao.saveOrUpdate(customer);
 
-            resp.sendRedirect("/customer/detail?identToEdit=" + customer.getId());
+            resp.sendRedirect(getServletContext().getContextPath()+"/customer/detail?identToEdit=" + customer.getId());
         } catch (NumberFormatException | NullPointerException ne) {
-            resp.sendRedirect("/customer/list");
+            resp.sendRedirect(getServletContext().getContextPath()+"/customer/list");
         }
     }
 

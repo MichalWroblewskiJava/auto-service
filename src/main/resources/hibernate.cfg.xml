@@ -4,11 +4,14 @@
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/auto_service_database?serverTimezone=Europe/Warsaw&amp;createDatabaseIfNotExist=true
+        <property name="connection.url">jdbc:mysql://46.41.149.156:3306/auto_service_database?serverTimezone=Europe/Warsaw&amp;createDatabaseIfNotExist=true
+<!--        <property name="connection.url">jdbc:mysql://localhost:3306/auto_service_database?serverTimezone=Europe/Warsaw&amp;createDatabaseIfNotExist=true-->
         </property>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.user">root</property>
-        <property name="connection.password">root</property>
+        <property name="connection.user">user</property>
+<!--        <property name="connection.user">root</property>-->
+        <property name="connection.password">javagdy21!</property>
+<!--        <property name="connection.password">root</property>-->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <!-- update dopisuje kolumny jeśli brakuje -->
         <!-- create przebudowuje bazę danych (jej tabele) - używamy jeśli mamy błąd w bazie danych i chcemy go naprawić (UWAGA! czyści dane!) -->

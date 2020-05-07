@@ -3,12 +3,12 @@ package pl.sda.javagdy2.database.model;
 public enum Fault {
     KLOCKI_HAMULCOWE ("Klocki hamulcowe"),
     WYMIANA_OPON("Wymiana opon"),
-    TARCZE_HAMULCOWE("Tarcze hamulcowe");
-//    ROZRZAD,
-//    SWIECE,
-//    AMORTYZATORY,
-//    FILTRY,
-//    WYMIANA_OLEJU;
+    TARCZE_HAMULCOWE("Tarcze hamulcowe"),
+    ROZRZAD ("Rozrząd"),
+    SWIECE("Świece"),
+    AMORTYZATORY ("Amortyzatory"),
+    FILTRY ("Filtry"),
+    WYMIANA_OLEJU("Wymiana olej");
     private String description;
 
     Fault(String description) {

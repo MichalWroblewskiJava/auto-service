@@ -28,7 +28,7 @@ public class OrderEditServlet extends HttpServlet {
             req.setAttribute("paid", order.isPaid() );
             req.getRequestDispatcher("/order_form.jsp").forward(req, resp);
         } catch (NumberFormatException | NullPointerException ne) {
-            resp.sendRedirect("/customer/list");
+            resp.sendRedirect(getServletContext().getContextPath()+"/customer/list");
         }
     }
 
@@ -46,9 +46,9 @@ public class OrderEditServlet extends HttpServlet {
             order.setCar_plate(car_plate);
             dao.saveOrUpdate(order);
 
-            resp.sendRedirect("/customer/detail?identToEdit=" + order.getCustomer().getId());
+            resp.sendRedirect(getServletContext().getContextPath()+"/customer/detail?identToEdit=" + order.getCustomer().getId());
         } catch (NumberFormatException | NullPointerException ne) {
-            resp.sendRedirect("/customer/list");
+            resp.sendRedirect(getServletContext().getContextPath()+"/customer/list");
         }
     }
 }

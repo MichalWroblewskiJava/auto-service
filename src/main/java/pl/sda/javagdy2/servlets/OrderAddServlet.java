@@ -18,7 +18,7 @@ public class OrderAddServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String customerId = req.getParameter("customerId");
         if (customerId == null || customerId.isEmpty()) {
-            resp.sendRedirect("/customer/list");
+            resp.sendRedirect(getServletContext().getContextPath()+"/customer/list");
             return;
         }
         req.setAttribute("customer_identifier", customerId);
@@ -61,7 +61,7 @@ public class OrderAddServlet extends HttpServlet {
         //Customer customer = dao.getById(Customer.class,customerIdLong);
         //order.setCustomer(customer);
         dao.saveOrUpdate(order);
-        resp.sendRedirect("/customer/detail?identToEdit="+customerId);
+        resp.sendRedirect(getServletContext().getContextPath()+"/customer/detail?identToEdit="+customerId);
 
 
 

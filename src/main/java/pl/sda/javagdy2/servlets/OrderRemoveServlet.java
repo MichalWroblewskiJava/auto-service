@@ -16,17 +16,17 @@ public class OrderRemoveServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String customerOrderId = req.getParameter("orderId");
         if (customerOrderId == null || customerOrderId.isEmpty()) {
-            resp.sendRedirect("customer/list");
+            resp.sendRedirect(getServletContext().getContextPath()+"/customer/list");
             return;
         }
         Long orderIdLong = Long.parseLong(customerOrderId);
         EntityDao dao = new EntityDao();
         CustomerOrder order = dao.getById(CustomerOrder.class, orderIdLong);
         if (order == null) {
-            resp.sendRedirect("customer/list");
+            resp.sendRedirect(getServletContext().getContextPath()+"/customer/list");
             return;
         }
         dao.delete(order);
-        resp.sendRedirect("/customer/detail?identToEdit=" + order.getCustomer().getId());
+        resp.sendRedirect(getServletContext().getContextPath()+"/customer/detail?identToEdit=" + order.getCustomer().getId());
     }
 }

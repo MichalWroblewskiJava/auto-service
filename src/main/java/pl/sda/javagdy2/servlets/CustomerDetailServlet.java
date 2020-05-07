@@ -18,7 +18,7 @@ public class CustomerDetailServlet extends HttpServlet {
         String identToEditString = req.getParameter("identToEdit");
 
         if(identToEditString == null || identToEditString.isEmpty()){
-            resp.sendRedirect("/customer/list");
+            resp.sendRedirect(getServletContext().getContextPath()+"/customer/list");
             return;
         }
 
@@ -27,7 +27,7 @@ public class CustomerDetailServlet extends HttpServlet {
         Customer customer = dao.getById(Customer.class, identToEdit);
 
         if(customer == null){
-            resp.sendRedirect("/customer/list");
+            resp.sendRedirect(getServletContext().getContextPath()+"/customer/list");
             return;
         }
 

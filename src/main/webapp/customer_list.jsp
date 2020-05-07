@@ -15,8 +15,8 @@
     <title>customer list</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/main.css">
+    <link href="${pageContext.request.contextPath}/https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/main.css">
 </head>
 <body>
 
@@ -54,10 +54,10 @@
                 <td class="td_item"><c:out value="${customer.rate}"/></td>
 
                 <td class="td_item">
-                    <a href="/customer/delete?identToDelete=<c:out value="${customer.id}"/>">delete</a>
+                    <a href="${pageContext.request.contextPath}/customer/delete?identToDelete=<c:out value="${customer.id}"/>">delete</a>
                 </td>
                 <td class="td_item">
-                    <a href="/customer/detail?identToEdit=<c:out value="${customer.id}"/>">Edit</a>
+                    <a href="${pageContext.request.contextPath}/customer/detail?identToEdit=<c:out value="${customer.id}"/>">Edit</a>
                 </td>
             </tr>
         </c:forEach>

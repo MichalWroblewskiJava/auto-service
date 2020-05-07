@@ -36,7 +36,7 @@ public class CustomerAddServlet extends HttpServlet {
                 .build();
         EntityDao dao = new EntityDao();
         dao.saveOrUpdate(customer);
-        resp.sendRedirect("/customer/list");
+        resp.sendRedirect(getServletContext().getContextPath()+"/customer/list");
     }
 
 }

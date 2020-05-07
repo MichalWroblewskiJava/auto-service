@@ -4,13 +4,13 @@
 <%@ page isELIgnored="false" %>
 <ul class="nav_list">
     <li class="nav_item">
-        <a class="nav_link" href="/index.jsp">Home page</a>
+        <a class="nav_link" href="${pageContext.request.contextPath}/index.jsp">Home page</a>
     </li>
     <li class="nav_item">
-        <a class="nav_link" href="/customer/add">Customer form</a>
+        <a class="nav_link" href="${pageContext.request.contextPath}/customer/add">Customer form</a>
     </li>
     <li class="nav_item">
-        <a class="nav_link" href="/customer/list">Customer list</a>
+        <a class="nav_link" href="${pageContext.request.contextPath}/customer/list">Customer list</a>
     </li>
 </ul>
 <%--<table>--%>
