@@ -16,6 +16,12 @@ public class CustomerAddServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String customerId = req.getParameter("customerId");
+        if (customerId == null || customerId.isEmpty()) {
+            req.getRequestDispatcher("/customer_form.jsp").forward(req,resp);
+            return;
+        }
+        req.setAttribute("customer_EditId", customerId);
         req.getRequestDispatcher("/customer_form.jsp").forward(req,resp);
     }
     @Override

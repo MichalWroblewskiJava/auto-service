@@ -19,7 +19,7 @@ public class Customer implements IBaseEntity {
     private String name;
     private String surname;
     private Integer cars_qty;
-    private Boolean tips;
+    private boolean tips;
     private Integer rate;
 
     @EqualsAndHashCode.Exclude

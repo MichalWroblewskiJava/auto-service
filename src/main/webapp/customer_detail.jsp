@@ -22,35 +22,40 @@
 <h1>Detailed information about a customer with id: <c:out value="${requestScope.customerDetails.id}"/></h1>
 <jsp:include page="/menu.jsp"/>
 <br/>
+
+
+<a href="${pageContext.request.contextPath}/customer/edit?customerEditId=<c:out value="${requestScope.customerDetails.id}"/>">Edit customer data </a>
+
+<br/>
+<br/>
 <table>
     <tr>
-        <td>Name:</td>
-        <td><c:out value="${requestScope.customerDetails.name}"/></td>
+        <td class="td_item">Name:</td>
+        <td class="td_item"><c:out value="${requestScope.customerDetails.name}"/></td>
     </tr>
     <tr>
-        <td>Surname:</td>
-        <td><c:out value="${requestScope.customerDetails.surname}"/></td>
+        <td class="td_item">Surname:</td>
+        <td class="td_item"><c:out value="${requestScope.customerDetails.surname}"/></td>
     </tr>
     <tr>
-        <td>Cars Qty:</td>
-        <td><c:out value="${requestScope.customerDetails.cars_qty}"/></td>
+        <td class="td_item">Cars Qty:</td>
+        <td class="td_item"><c:out value="${requestScope.customerDetails.cars_qty}"/></td>
     </tr>
     <tr>
-        <td>Tips:</td>
-        <td><c:out value="${requestScope.customerDetails.tips}"/></td>
+        <td class="td_item">Tips:</td>
+        <td class="td_item"><c:out value="${requestScope.customerDetails.tips}"/></td>
     </tr>
     <tr>
-        <td>Rate:</td>
-        <td><c:out value="${requestScope.customerDetails.rate}"/></td>
+        <td class="td_item">Rate:</td>
+        <td class="td_item"><c:out value="${requestScope.customerDetails.rate}"/></td>
     </tr>
 </table>
 <br/>
 
-<%--Link do strony dodawania ocen - możemy przesłać dane o studencie.--%>
 <a href="${pageContext.request.contextPath}/order/add?customerId=<c:out value="${requestScope.customerDetails.id}"/>">Add order to this customer </a>
 
 <br/>
-
+<br/>
 
 <table style="border: 1px solid">
     <thead>

@@ -12,6 +12,8 @@ Dodaj:
 - możliwość przeglądania szczegółów klienta (wraz z listą zleceń)
 - dodaj możliwość dodawania zleceń do klienta
 - dodaj możliwość edytowania/usuwania zleceń
+
+
 - *dodaj możliwość edytowania podstawowych danych klienta (nie robiliśmy tego.
 analogicznie byłaby to strona edycji studenta)* (z gwiazdką)
 
